@@ -1,3 +1,3 @@
-import MyCounter from './components/App'
+import BoxShadow from './components/BoxShadow'
 
-export { MyCounter }
+export { BoxShadow }
