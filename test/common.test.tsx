@@ -14,3 +14,16 @@ describe('Common render', () => {
     )
   })
 })
+
+describe('Checking styles', () => {
+  it('has the required styles', () => {
+    const { container } = render(
+      <BoxShadow style='shadow1'>
+        <div>Hello</div>
+      </BoxShadow>,
+    )
+
+    const div = container.querySelector('div')
+    expect(div?.style.boxShadow).toBe('rgba(0, 0, 0, 0.16) 0px 1px 4px')
+  })
+})

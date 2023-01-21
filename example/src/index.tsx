@@ -6,7 +6,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <div>
-      <BoxShadow style='shadow1'>
+      <BoxShadow style='shadow2'>
         <div style={{ width: '400px', height: '400px' }}>Hello</div>
       </BoxShadow>
     </div>
