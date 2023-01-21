@@ -8,7 +8,7 @@ import { BoxShadow } from '../src'
 describe('Common render', () => {
   it('renders without crashing', () => {
     render(
-      <BoxShadow>
+      <BoxShadow style='shadow1'>
         <div>Hello</div>
       </BoxShadow>,
     )
