@@ -5,7 +5,7 @@ type Props = {
 }
 
 const TextShadow = (props: Props) => {
-  return <div>{props.children}</div>
+  return <span>{props.children}</span>
 }
 
 export default TextShadow

@@ -23,7 +23,7 @@ describe('Checking styles', () => {
       </BoxShadow>,
     )
 
-    const div = container.querySelector('div')
-    expect(div?.style.boxShadow).toBe('rgba(0, 0, 0, 0.16) 0px 1px 4px')
+    const box = container.querySelector('span')
+    expect(box?.style.boxShadow).toBe('rgba(0, 0, 0, 0.16) 0px 1px 4px')
   })
 })

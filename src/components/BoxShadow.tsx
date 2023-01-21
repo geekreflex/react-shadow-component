@@ -7,7 +7,7 @@ type Props = {
 }
 
 const BoxShadow = ({ children, style }: Props) => {
-  return <div style={{ boxShadow: shadows[style] }}>{children}</div>
+  return <span style={{ boxShadow: shadows[style] }}>{children}</span>
 }
 
 export default BoxShadow
