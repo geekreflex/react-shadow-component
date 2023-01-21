@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/shadow.css'
+import { shadows } from '../data/shadows'
 
 type Props = {
   children: React.ReactNode
@@ -7,7 +7,7 @@ type Props = {
 }
 
 const BoxShadow = ({ children, style }: Props) => {
-  return <div className={`__rsc-${style}`}>{children}</div>
+  return <div style={{ boxShadow: shadows[style] }}>{children}</div>
 }
 
 export default BoxShadow
