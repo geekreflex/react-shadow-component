@@ -1,6 +1,6 @@
 {
   "name": "react-shadow-component",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple and intuitive wasy to add shadow",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
