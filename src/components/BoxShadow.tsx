@@ -3,7 +3,7 @@ import { shadows } from '../data/shadows'
 import { ShadowContext } from './ShadwoContext'
 
 type Props = {
-  children: React.ReactNode
+  children: React.ReactElement
   style: string
   shadowColor?: string
 }
@@ -19,10 +19,12 @@ const BoxShadow = ({ children, style, shadowColor }: Props) => {
 
   const mainStyle = {
     boxShadow: `${renderShadowColor()} ${shadows[style].set}`,
-    display: `inline-flex`,
   }
 
-  return <span style={mainStyle}>{children}</span>
+  const child = React.Children.only(children)
+  const objectStyle = Object.assign({}, mainStyle)
+
+  return <React.Fragment>{React.cloneElement(child, { style: objectStyle })}</React.Fragment>
 }
 
 export default BoxShadow
