@@ -72,7 +72,7 @@ The `BoxShadow` component accepts the following props:
 
 - `shadowColor`: The `shadowColor` prop is an array of strings that represents the color of the box-shadow. You can pass in any valid CSS color value, such as a named color, a hex code, or an RGB value
 
-- `shadowStyle`: The `shadowStyle` prop is a string that represents a predefined shadow style that you can apply to your elements. For example, the naming convention `shadowX_Y` where X is the number of predefined shadow and Y is the number of shadows separated by commas.
+- `shadowStyle`: The `shadowStyle` prop is a string that represents a predefined shadow style that you can apply to your elements. For example, the naming convention `shadowX_Y` where `X` is the number of predefined shadow and `Y` is the number of shadows separated by commas.
 
 For example, `shadow1_3` means the first predefined shadow has three shadow separated by comma.
 
