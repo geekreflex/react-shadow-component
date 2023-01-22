@@ -7,7 +7,7 @@ root.render(
   <React.StrictMode>
     <div>
       <BoxShadow style='shadow2'>
-        <div style={{ width: '400px', height: '400px', border: '1px solid red' }}>Hello</div>
+        <div style={{ width: '400px', height: '400px', padding: '20px' }}>Hello</div>
       </BoxShadow>
     </div>
   </React.StrictMode>,

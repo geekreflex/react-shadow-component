@@ -12,12 +12,49 @@
 To install **react-shadow-component**, simply run the following command:
 
 ```sh
+# NPM
 npm install react-shadow-component
+
+# Yarn
+yarn add react-shadow-component
 ```
 
 ## Usage
 
 **react-shadow-component** is an HOC that can be applied to any React component. Here's an example of how you can use it:
+
+### BoxShadow
+
+```jsx
+import React from 'react'
+import { BoxShadow } from 'react-shadow-component'
+
+export const MyComponent = () => {
+  return (
+    <div>
+      <BoxShadow>
+        <div>Your awesome content</div>
+      </BoxShadow>
+    </div>
+  )
+}
+```
+
+### TextShadow
+
+```jsx
+
+...
+
+```
+
+### WithShadow (HOC)
+
+```
+
+...
+
+```
 
 [npm-url]: https://www.npmjs.com/package/react-shadow-component
 [npm-image]: https://img.shields.io/npm/v/react-shadow-component
