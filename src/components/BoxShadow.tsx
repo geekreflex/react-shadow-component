@@ -10,7 +10,7 @@ type Props = {
 
 const BoxShadow = ({ children, shadowStyle, shadowColor }: Props) => {
   const contextStyleOptions = useContext(ShadowContext)
-  let shadowVal: string[] = []
+  const shadowVal: string[] = []
 
   // the box shadowColor takes priority, then the context
   // else we'll use the default shadow color
