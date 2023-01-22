@@ -15,25 +15,21 @@ const BoxShadow = ({ children, shadowStyle, shadowColor }: Props) => {
   // the box shadowColor takes priority, then the context
   // else we'll use the default shadow color
   const renderShadowColor = () => {
-    const colorLength = shadows[shadowStyle].color.length
-    const selectedShadowStyle = shadows[shadowStyle]
+    try {
+      const colorLength = shadows?.[shadowStyle].color.length
+      const selectedShadowStyle = shadows?.[shadowStyle]
 
-    // const colorArray = shadowColor || contextStyleOptions.shadowColor || selectedShadowStyle.color
-
-    // if (shadowColor?.length || contextStyleOptions.shadowColor?.length) {
-    //   for (let i = 0; i < colorLength; i++) {
-    //     shadowVal.push(`${selectedShadowStyle.offset[i]} ${colorArray[i]}`)
-    //   }
-
-    //   return shadowVal.join(', ')
-
-    // }
-
-    for (let i = 0; i < colorLength; i++) {
-      shadowVal.push(`${selectedShadowStyle.offset[i]} ${shadowColor?.[i] || contextStyleOptions.shadowColor || selectedShadowStyle.color[i]}`)
+      for (let i = 0; i < colorLength; i++) {
+        shadowVal.push(
+          `${selectedShadowStyle.offset[i]} ${
+            shadowColor?.[i] || contextStyleOptions.shadowColor || selectedShadowStyle.color[i]
+          }`,
+        )
+      }
+      return shadowVal.join(', ')
+    } catch (error) {
+      throw new Error('Error invalid shadow style detected')
     }
-    return shadowVal.join(', ')
-
   }
 
   const mainStyle = {
