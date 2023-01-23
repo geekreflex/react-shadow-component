@@ -46,11 +46,11 @@ You can also use the `WithShadow` provider with props to style all `BoxShadow` c
 
 ```jsx
 import React from 'react'
-import { WithShadow } from 'react-shadow-component'
+import { WithShadow, BoxShadow } from 'react-shadow-component'
 
 const MyApp = () => {
   return (
-    <WithShadow shadowColor={['rgba(232, 0, 0, 0.19']}>
+    <WithShadow shadowColor={['rgba(232, 0, 0, 0.19']} shadowStyle='shadow2_1'>
       <div>
         <BoxShadow>
           <div>This element has a box-shadow</div>
@@ -65,6 +65,10 @@ const MyApp = () => {
 
 export default MyApp
 ```
+
+### Note
+
+- If you pass props to the `BoxShadow` component and use the `WithShadow` component, the props passed to the `BoxShadow` component will take precedence.
 
 ## Props
 
