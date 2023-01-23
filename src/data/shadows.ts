@@ -7,4 +7,8 @@ export const shadows: Record<string, { color: string; set: string }> = {
     color: 'rgba(149, 157, 165, 0.2)',
     set: '0px 8px 24px',
   },
+  shadow3: {
+    color: 'rgba(255, 157, 177, 0.2)',
+    set: '0px 16px 14px',
+  },
 }
