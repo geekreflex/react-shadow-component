@@ -1,24 +1,39 @@
 import React, { useContext } from 'react'
-import { shadows } from '../data/shadows'
+import { shadows } from '../data/box-shadows'
 import { ShadowContext } from './ShadwoContext'
 
 type Props = {
   children: React.ReactElement
-  style: string
-  shadowColor?: string
+  shadowStyle: string
+  shadowColor?: string[]
 }
 
-const BoxShadow = ({ children, style, shadowColor }: Props) => {
+const BoxShadow = ({ children, shadowStyle, shadowColor }: Props) => {
   const contextStyleOptions = useContext(ShadowContext)
+  const shadowVal: string[] = []
 
   // the box shadowColor takes priority, then the context
   // else we'll use the default shadow color
   const renderShadowColor = () => {
-    return `${shadowColor || contextStyleOptions.shadowColor || shadows[style].color}`
+    try {
+      const colorLength = shadows?.[shadowStyle].color.length
+      const selectedShadowStyle = shadows?.[shadowStyle]
+
+      for (let i = 0; i < colorLength; i++) {
+        shadowVal.push(
+          `${selectedShadowStyle.offset[i]} ${
+            shadowColor?.[i] || contextStyleOptions.shadowColor || selectedShadowStyle.color[i]
+          }`,
+        )
+      }
+      return shadowVal.join(', ')
+    } catch (error) {
+      throw new Error('Error invalid shadow style detected')
+    }
   }
 
   const mainStyle = {
-    boxShadow: `${renderShadowColor()} ${shadows[style].set}`,
+    boxShadow: `${renderShadowColor()}`,
   }
 
   const child = React.Children.only(children)
