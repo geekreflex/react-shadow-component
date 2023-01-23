@@ -10,6 +10,7 @@
     "url": "git+https://github.com/geekreflex/react-shadow-component.git"
   },
   "scripts": {
+    "clean": "rimramf dist",
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
@@ -17,7 +18,7 @@
     "prettier": "prettier --write \"{src,test,example/src}/**/**.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run prettier && npm run lint"
+    "prepublishOnly": "npm run clean && npm test && npm run prettier && npm run lint"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -31,7 +32,9 @@
     "react",
     "typescript",
     "UI",
-    "shadow"
+    "shadow",
+    "component",
+    "react-shadow"
   ],
   "author": "Jerry Nwosu",
   "license": "MIT",
