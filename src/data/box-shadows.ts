@@ -11,7 +11,7 @@ export const shadows: Record<string, { color: string[]; offset: string[] }> = {
   shadow3_5: {
     color: [
       'rgba(0, 0, 0, 0.25)',
-      'rgba(0, 0, 0, 0.12)',
+      'rgba(0, 0, 0, 0.16)',
       'rgba(0, 0, 0, 0.12)',
       'rgba(0, 0, 0, 0.17)',
       'rgba(0, 0, 0, 0.09)',
