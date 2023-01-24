@@ -1,6 +1,6 @@
 export const shadows: Record<string, { color: string[]; offset: string[] }> = {
   shadow1_1: {
-    color: ['rgba(0,0,0,0.16)'],
+    color: ['rgba(0, 0, 0, 0.16)'],
     offset: ['0px 1px 4px'],
   },
   shadow2_1: {

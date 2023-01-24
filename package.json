@@ -10,7 +10,7 @@
     "url": "git+https://github.com/geekreflex/react-shadow-component.git"
   },
   "scripts": {
-    "clean": "rimramf dist",
+    "clean": "rimraf dist",
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
@@ -55,6 +55,7 @@
     "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^4.1.1",
     "ts-jest": "^29.0.5",
     "typescript": "^4.9.4"
   }

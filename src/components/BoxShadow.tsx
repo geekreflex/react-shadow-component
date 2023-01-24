@@ -15,7 +15,7 @@ const BoxShadow = ({ children, shadowStyle, shadowColor }: Props) => {
   // the box shadowColor takes priority, then the context
   // else we'll use the default shadow color
   const renderShadowColor = () => {
-    try {
+    if (shadowStyle in shadows) {
       const colorLength = shadows?.[shadowStyle].color.length
       const selectedShadowStyle = shadows?.[shadowStyle]
 
@@ -27,8 +27,8 @@ const BoxShadow = ({ children, shadowStyle, shadowColor }: Props) => {
         )
       }
       return shadowVal.join(', ')
-    } catch (error) {
-      throw new Error('Error invalid shadow style detected')
+    } else {
+      return `${shadows['shadow1_1'].offset} ${shadows['shadow1_1'].color}`
     }
   }
 
