@@ -24,6 +24,19 @@ describe('Checking styles', () => {
     )
 
     const box = container.querySelector('div')
-    expect(box?.style.boxShadow).toBe('0px 1px 4px rgba(0,0,0,0.16)')
+    expect(box?.style.boxShadow).toBe('0px 1px 4px rgba(0, 0, 0, 0.16)')
+  })
+})
+
+describe('Checking invalid styles', () => {
+  it('update to first box shadow in object', () => {
+    const { container } = render(
+      <BoxShadow shadowStyle='shadow19_4'>
+        <div>Hello</div>
+      </BoxShadow>,
+    )
+
+    const box = container.querySelector('div')
+    expect(box?.style.boxShadow).toBe('0px 1px 4px rgba(0, 0, 0, 0.16)')
   })
 })

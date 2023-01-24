@@ -1,6 +1,6 @@
 {
   "name": "react-shadow-component",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Simple and intuitive wasy to add shadow",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -10,6 +10,7 @@
     "url": "git+https://github.com/geekreflex/react-shadow-component.git"
   },
   "scripts": {
+    "clean": "rimraf dist",
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
@@ -17,7 +18,7 @@
     "prettier": "prettier --write \"{src,test,example/src}/**/**.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run prettier && npm run lint"
+    "prepublishOnly": "npm run clean && npm test && npm run prettier && npm run lint"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -31,7 +32,9 @@
     "react",
     "typescript",
     "UI",
-    "shadow"
+    "shadow",
+    "component",
+    "react-shadow"
   ],
   "author": "Jerry Nwosu",
   "license": "MIT",
@@ -52,6 +55,7 @@
     "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^4.1.1",
     "ts-jest": "^29.0.5",
     "typescript": "^4.9.4"
   }
