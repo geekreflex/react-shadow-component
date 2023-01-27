@@ -8,7 +8,7 @@ type Props = {
   shadowColor?: string[]
 }
 
-const BoxShadow = ({ children, shadowStyle='shadow1_1', shadowColor }: Props) => {
+const BoxShadow = ({ children, shadowStyle = 'shadow1_1', shadowColor }: Props) => {
   const contextStyleOptions = useContext(ShadowContext)
   const shadowVal: string[] = []
 
