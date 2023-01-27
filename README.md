@@ -32,13 +32,15 @@ import { BoxShadow } from 'react-shadow-component'
 export const MyComponent = () => {
   return (
     <div>
-      <BoxShadow>
+      <BoxShadow shadowStyle='shadow1_1'>
         <div>Your awesome content</div>
       </BoxShadow>
     </div>
   )
 }
 ```
+
+If no shadowStyle provided, it uses the default shadow style `shadow1_1`
 
 ### WithShadow (HOC)
 
