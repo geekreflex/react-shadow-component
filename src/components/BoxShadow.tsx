@@ -4,11 +4,11 @@ import { ShadowContext } from './ShadwoContext'
 
 type Props = {
   children: React.ReactElement
-  shadowStyle: string
+  shadowStyle?: string
   shadowColor?: string[]
 }
 
-const BoxShadow = ({ children, shadowStyle, shadowColor }: Props) => {
+const BoxShadow = ({ children, shadowStyle='shadow1_1', shadowColor }: Props) => {
   const contextStyleOptions = useContext(ShadowContext)
   const shadowVal: string[] = []
 
