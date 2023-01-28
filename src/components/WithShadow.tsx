@@ -12,7 +12,7 @@ const WithShadow: React.FC<Props> = ({ children, ...styleOptions }): ReactElemen
 WithShadow.defaultProps = {
   blur: 20,
   spread: -20,
-  color: 'navy',
+  color: 'rgba(0,0,0,0.45)',
   offsetX: 0,
   offsetY: 25,
 }

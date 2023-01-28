@@ -27,3 +27,18 @@ describe('Checking styles', () => {
     expect(box?.style.boxShadow).toBe('2px 3px 5px 5px red')
   })
 })
+
+describe('Checking styles', () => {
+  it('inherits color from with shadow', () => {
+    const { container } = render(
+      <WithShadow color='blue'>
+        <BoxShadow blur={5} spread={5} offsetX={2} offsetY={3}>
+          <div>Hello</div>
+        </BoxShadow>
+      </WithShadow>,
+    )
+
+    const box = container.querySelector('div')
+    expect(box?.style.boxShadow).toBe('2px 3px 5px 5px blue')
+  })
+})
