@@ -5,7 +5,7 @@
 ![npm-typescript]
 [![License][github-license]][github-license-url]
 
-**react-shadow-component**, a powerful and versatile package that allows you to easily add various box and text shadow styles to your React components. With this package, you can eliminate the need to write complex CSS code and add professional-looking shadows to your components with ease.
+**react-shadow-component**, a powerful and versatile package that allows you to easily add various box shadow styles to your React components. With this package, you can eliminate the need to write complex CSS code and add professional-looking shadows to your components with ease.
 
 ## Installation
 
@@ -32,15 +32,13 @@ import { BoxShadow } from 'react-shadow-component'
 export const MyComponent = () => {
   return (
     <div>
-      <BoxShadow shadowStyle='shadow1_1'>
-        <div>Your awesome content</div>
+      <BoxShadow color='#000' blur={15} spread={5} offsetX={9} offsetY={15}>
+        <div className='box'>Hello</div>
       </BoxShadow>
     </div>
   )
 }
 ```
-
-If no shadowStyle provided, it uses the default shadow style `shadow1_1`
 
 ### WithShadow (HOC)
 
@@ -48,24 +46,27 @@ You can also use the `WithShadow` provider with props to style all `BoxShadow` c
 
 ```jsx
 import React from 'react'
-import { WithShadow, BoxShadow } from 'react-shadow-component'
+import { BoxShadow, WithShadow } from 'react-shadow-component'
 
-const MyApp = () => {
+function App() {
   return (
-    <WithShadow shadowColor={['rgba(232, 0, 0, 0.19']} shadowStyle='shadow2_1'>
-      <div>
-        <BoxShadow>
-          <div>This element has a box-shadow</div>
+    <div>
+      <WithShadow blur={10} color={'rgba(0,0,0,0.45)'}>
+        <BoxShadow color='#000' offsetX={0} blur={15}>
+          <div className='box'>Hello</div>
         </BoxShadow>
         <BoxShadow>
-          <div>This element has a box-shadow</div>
+          <div className='box'>Hello</div>
         </BoxShadow>
-      </div>
-    </WithShadow>
+        <BoxShadow>
+          <div className='box'>Hello</div>
+        </BoxShadow>
+      </WithShadow>
+    </div>
   )
 }
 
-export default MyApp
+export default App
 ```
 
 ### Note
@@ -76,27 +77,19 @@ export default MyApp
 
 The `BoxShadow` component accepts the following props:
 
-- `shadowColor`: The `shadowColor` prop is an array of strings that represents the color of the box-shadow. You can pass in any valid CSS color value, such as a named color, a hex code, or an RGB value
+- `blur`: This prop controls the size of the shadow. A higher value will result in a larger shadow, while a lower value will result in a smaller shadow.
 
-- `shadowStyle`: The `shadowStyle` prop is a string that represents a predefined shadow style that you can apply to your elements. For example, the naming convention `shadowX_Y` where `X` is the number of predefined shadow and `Y` is the number of shadows separated by commas.
+- `spread`: This prop controls the spread of the shadow. A higher value will result in a wider spread, while a lower value will result in a more focused shadow.
 
-For example, `shadow1_3` means the first predefined shadow has three shadow separated by comma.
+- `color`: This prop controls the color of the shadow. You can set it as a CSS color string, like `#000000` for black color.
 
-```jsx
-  return (
-    <BoxShadow shadowStyle='shadow1_3'
-    shadowColor={['#ff000000', 'rgb(0, 255, 0)' 'blue']}>
-      <div>This element has a predefined shadow1_3 box-shadow</div>
-    </BoxShadow>
-  )
+- `offsetX`: This prop controls the horizontal offset of the shadow. A positive value will move the shadow to the right, while a negative value will move the shadow to the left.
 
-```
-
-This naming convention makes it easier for the users to understand the predefined shadow styles and use them accordingly.
+- `offsetY`: This prop controls the vertical offset of the shadow. A positive value will move the shadow down, while a negative value will move the shadow up.
 
 ## Conclusion
 
-This package is a simple way to add box-shadow to your React elements. You can use the Shadow component to add a box-shadow to a single element, or the WithShadow provider to add style to all `BoxShadow` components. You can customize the shadow by passing in shadowColor and shadowStyle props to the Shadow component or `WithShadow`.
+This package is a simple way to add box-shadow to your React elements. You can use the Shadow component to add a box-shadow to a single element, or the WithShadow provider to add box-shadow to all `BoxShadow` components. You can customize the shadow by passing in `blur`, `spread`, `offsetX`, `offsetY` and `color` props to `BoxShadow` or `WithShadow`.
 
 [npm-url]: https://www.npmjs.com/package/react-shadow-component
 [npm-image]: https://img.shields.io/npm/v/react-shadow-component
