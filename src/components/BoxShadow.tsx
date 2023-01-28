@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { ShadowProps } from './ShadowProps'
-import { ShadowContext } from './WithShadow'
+import { ShadowContext } from './ShadowContext'
+import { BoxShadowProps } from './ShadowProps'
 
-const BoxShadow: React.FC<ShadowProps> = ({ blur, spread, color, offsetY, offsetX, children }) => {
+const BoxShadow: React.FC<BoxShadowProps> = ({ blur, spread, color, offsetY, offsetX, children }) => {
   const {} = useContext(ShadowContext)
 
   const styles = {

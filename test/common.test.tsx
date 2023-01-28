@@ -3,12 +3,12 @@ import { render } from '@testing-library/react'
 
 import 'jest-canvas-mock'
 
-import { BoxShadow } from '../src'
+import { BoxShadow, WithShadow } from '../src'
 
 describe('Common render', () => {
   it('renders without crashing', () => {
     render(
-      <BoxShadow shadowStyle='shadow1_1'>
+      <BoxShadow>
         <div>Hello</div>
       </BoxShadow>,
     )
@@ -18,25 +18,12 @@ describe('Common render', () => {
 describe('Checking styles', () => {
   it('has the required styles', () => {
     const { container } = render(
-      <BoxShadow shadowStyle='shadow1_1'>
+      <BoxShadow blur={5} spread={5} offsetX={2} offsetY={3} color='red'>
         <div>Hello</div>
       </BoxShadow>,
     )
 
     const box = container.querySelector('div')
-    expect(box?.style.boxShadow).toBe('0px 1px 4px rgba(0, 0, 0, 0.16)')
-  })
-})
-
-describe('Checking invalid styles', () => {
-  it('update to first box shadow in object', () => {
-    const { container } = render(
-      <BoxShadow shadowStyle='shadow19_4'>
-        <div>Hello</div>
-      </BoxShadow>,
-    )
-
-    const box = container.querySelector('div')
-    expect(box?.style.boxShadow).toBe('0px 1px 4px rgba(0, 0, 0, 0.16)')
+    expect(box?.style.boxShadow).toBe('2px 3px 5px 5px red')
   })
 })

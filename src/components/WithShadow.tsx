@@ -1,12 +1,11 @@
 import { PropsWithChildren, ReactElement } from 'react'
 import React from 'react'
-import { ShadowProps } from './ShadowProps'
+import { ShadowContext } from './ShadowContext'
+import { WithShadowProps } from './ShadowProps'
 
-export type WithShadowProps = PropsWithChildren<ShadowStyleProps>
+export type Props = PropsWithChildren<WithShadowProps>
 
-export const ShadowContext = React.createContext<ShadowProps>({})
-
-const WithShadow = ({ children, ...styleOptions }: WithShadowProps): ReactElement => {
+const WithShadow: React.FC<Props> = ({ children, ...styleOptions }): ReactElement => {
   return <ShadowContext.Provider value={styleOptions}>{children}</ShadowContext.Provider>
 }
 
