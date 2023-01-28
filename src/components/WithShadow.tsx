@@ -9,4 +9,12 @@ const WithShadow: React.FC<Props> = ({ children, ...styleOptions }): ReactElemen
   return <ShadowContext.Provider value={styleOptions}>{children}</ShadowContext.Provider>
 }
 
+WithShadow.defaultProps = {
+  blur: 20,
+  spread: -20,
+  color: 'navy',
+  offsetX: 0,
+  offsetY: 25,
+}
+
 export default WithShadow
