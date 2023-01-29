@@ -2,6 +2,7 @@ import { PropsWithChildren, ReactElement } from 'react'
 import React from 'react'
 import { ShadowContext } from './ShadowContext'
 import { WithShadowProps } from './ShadowProps'
+import { values } from './default'
 
 export type Props = PropsWithChildren<WithShadowProps>
 
@@ -10,11 +11,11 @@ const WithShadow: React.FC<Props> = ({ children, ...styleOptions }): ReactElemen
 }
 
 WithShadow.defaultProps = {
-  blur: 20,
-  spread: -20,
-  color: 'rgba(0,0,0,0.45)',
-  offsetX: 0,
-  offsetY: 25,
+  blur: values.blur,
+  spread: values.spread,
+  color: values.color,
+  offsetX: values.offsetX,
+  offsetY: values.offsetY,
 }
 
 export default WithShadow

@@ -16,6 +16,19 @@ describe('Common render', () => {
 })
 
 describe('Checking styles', () => {
+  it('has the default styles', () => {
+    const { container } = render(
+      <BoxShadow>
+        <div>Hello</div>
+      </BoxShadow>,
+    )
+
+    const box = container.querySelector('div')
+    expect(box?.style.boxShadow).toBe('0px 8px 24px 0px rgba(149, 157, 165, 0.2)')
+  })
+})
+
+describe('Checking styles', () => {
   it('has the required styles', () => {
     const { container } = render(
       <BoxShadow blur={5} spread={5} offsetX={2} offsetY={3} color='red'>
