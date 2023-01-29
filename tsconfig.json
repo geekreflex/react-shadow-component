@@ -4,7 +4,7 @@
     "lib": ["dom", "ES2017"],
     "importHelpers": false,
     "declaration": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "rootDir": "./src",
     "outDir": "./dist/esm",
     "strict": true,
